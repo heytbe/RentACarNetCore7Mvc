@@ -1,0 +1,65 @@
+﻿@model HomeVm
+
+<div class="area">
+    <p class="title">Arabalar ve Markalar</p>
+    <div class="areabigcategory">
+        @foreach (var item in Model.CarBrandsList)
+        {
+            <div class="bigimage" style="background-image: url(@item.Image);">
+                <p>@item.CarBrands</p>
+            </div>
+        }
+    </div>
+</div>
+<div class="fullscreen">
+    <div class="information">
+        <p class="bigtext">Hangi Arabayı Aramıştınız?</p>
+        <p class="smalltext">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus veniam eos ab veritatis ex recusandae saepe sed. Earum excepturi architecto perferendis, voluptas qui beatae doloremque autem cupiditate labore nostrum reiciendis.</p>
+        <div class="area">
+            <div class="imgarea">
+                <img src="~/image/bmwpng.png" alt="">
+            </div>
+            <div class="imgarea">
+                <img src="~/image/audipng.png" alt="">
+            </div>
+            <div class="imgarea">
+                <img src="~/image/mercedespng.png" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="carslist">
+        @foreach (var item in Model.CarListDtos)
+        {
+            <div class="cars">
+                <div class="imgarea">
+                    <img src="@item.CarImage" alt="">
+                </div>
+                <div class="carsinformation">
+                    <p class="title">@item.CarBrand.CarBrands @item.Model</p>
+                    <p class="title margintop5">@item.CarType.CarTypes / @item.CarDate</p>
+                    <div class="icons">
+                        <div class="icon">
+                            <i class="fa-solid fa-users"></i>
+                            <p>@item.CarPersons</p>
+                        </div>
+                        <div class="icon">
+                            <i class="fa-solid fa-gears"></i>
+                            <p>@item.CarGear</p>
+                        </div>
+                        <div class="icon">
+                            <i class="fa-solid fa-suitcase-rolling"></i>
+                            <p>@item.CarLuggage</p>
+                        </div>
+                        <div class="icon">
+                            <i class="fa-solid fa-door-open"></i>
+                            <p>@item.CarDoors</p>
+                        </div>
+                    </div>
+                    <p class="carprice">@item.CarPrice.ToString("c2")</p>
+                </div>
+                <div class="button">
+                    <i class="fa-solid fa-caret-right"></i>
+                </div>
+            </div>
+        }
+    </div>

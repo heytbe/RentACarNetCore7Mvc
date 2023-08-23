@@ -1,0 +1,13 @@
+﻿@model CarBrandCreateDto
+
+<form action="" method="post" id="moviecreate" enctype="multipart/form-data">
+    <div class="input">
+        <label for="moviename">Araba Marka :</label>
+        <input type="text" asp-for="CarBrands" placeholder="Araba Marka">
+    </div>
+    <div class="input">
+        <label asp-for="Image">Araba Marka Resim:</label>
+        <input type="file" asp-for="Image">
+    </div>
+    <input type="submit" value="Kaydet" class="frombtn">
+</form>

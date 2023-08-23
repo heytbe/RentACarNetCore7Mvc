@@ -1,0 +1,49 @@
+﻿@model CarCreateDto
+
+<form action="" method="post" enctype="multipart/form-data" id="moviecreate">
+    <div class="input">
+        <label for="moviename">Araba Markası :</label>
+        <select asp-for="CarBrandId" asp-items="@ViewBag.Brand"></select>
+    </div>
+    <div class="input">
+        <label for="movieposter">Araba Model :</label>
+        <input type="text" asp-for="Model" placeholder="Araba Model">
+    </div>
+    <div class="input">
+        <label for="moviename">Araba Tipi :</label>
+        <select asp-for="CarTypeId" asp-items="@ViewBag.CarType"></select>
+    </div>
+    <div class="input">
+        <label for="movieposter">Araba Kapak Resmi :</label>
+        <input type="file" asp-for="CarImage">
+    </div>
+    <div class="input">
+        <label for="movieposter">Araba Resimleri :</label>
+        <input type="file" asp-for="CarImages" multiple>
+    </div>
+    <div class="input">
+        <label for="movieorginal">Araba Yıl :</label>
+        <input type="text" asp-for="CarDate" placeholder="Araba Yıl">
+    </div>
+    <div class="input">
+        <label for="movieorginal">Kaç Kişilik :</label>
+        <input type="text" asp-for="CarPersons" placeholder="Kaç Kişilik">
+    </div>
+    <div class="input">
+        <label for="movieorginal">Vites Tipi :</label>
+        <input type="text" asp-for="CarGear" placeholder="Vites Tipi">
+    </div>
+    <div class="input">
+        <label for="movieorginal">Bagaj Sayısı :</label>
+        <input type="text" asp-for="CarLuggage" placeholder="Bagaj Sayısı">
+    </div>
+    <div class="input">
+        <label for="movieorginal">Kapı Sayısı :</label>
+        <input type="text" asp-for="CarDoors" placeholder="Kapı Sayısı">
+    </div>
+    <div class="input">
+        <label for="movieorginal">Fiyat :</label>
+        <input type="text" asp-for="CarPrice" placeholder="Fiyat">
+    </div>
+    <input type="submit" value="Kaydet" class="frombtn">
+</form>

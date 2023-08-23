@@ -1,0 +1,105 @@
+﻿<!DOCTYPE html>
+<html lang="trTR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/style.css">
+    <link rel="stylesheet" href="~/css/heytbecss.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <title>Ana Sayfa</title>
+</head>
+
+<body>
+    <div id="tumsayfaalani">
+        <div class="menucontainer floatleft">
+            <div class="menu">
+                <div class="fullscreen flex-row-center menulogoarea paddingfull10">
+                    <i class="fa-brands fa-square-pied-piper"></i>
+                    <span class="logotext">Car</span>
+                </div>
+                <div class="fullscreen menuarea paddingfull10">
+                    <small class="fullscreen">Menu</small>
+                    <ul class="fullscreen topmenu">
+                        <li>
+                            <a class="fullscreen" asp-controller="home" asp-action="index">
+                                <i class="fa-solid fa-house-circle-check"></i><span>
+                                    Ana
+                                    Sayfa
+                                </span>
+                            </a>
+                        </li>
+                        <li class="submenuli">
+                            <div class="fullscreen flex-row-between submenutitle">
+                                <div class="fullscreen">
+                                    <i class="fa-solid fa-ticket"></i>
+                                    <span>Araç Marka İşlemleri</span>
+                                </div>
+                                <i class="fa-solid fa-caret-down menuopen"></i>
+                            </div>
+                            <ul class="fullscreen submenu">
+                                <li>
+                                    <a asp-controller="carbrand" asp-action="index"><i class="fa-solid fa-plus"></i><span>Araç Markaları</span></a>
+                                </li>
+                                <li>
+                                    <a asp-controller="carbrand" asp-action="brandcreate"><i class="fa-solid fa-plus"></i><span>Araç Marka Ekle</span></a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="submenuli">
+                            <div class="fullscreen flex-row-between submenutitle">
+                                <div class="fullscreen">
+                                    <i class="fa-solid fa-ticket"></i>
+                                    <span>Araç Tip İşlemleri</span>
+                                </div>
+                                <i class="fa-solid fa-caret-down menuopen"></i>
+                            </div>
+                            <ul class="fullscreen submenu">
+                                <li>
+                                    <a asp-controller="cartype" asp-action="index"><i class="fa-solid fa-plus"></i><span>Araç Tipleri</span></a>
+                                </li>
+                                <li>
+                                    <a asp-controller="cartype" asp-action="typecreate"><i class="fa-solid fa-plus"></i><span>Tip Ekle</span></a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="submenuli">
+                            <div class="fullscreen flex-row-between submenutitle">
+                                <div class="fullscreen">
+                                    <i class="fa-solid fa-camera-retro"></i>
+                                    <span>Araç İşlemleri</span>
+                                </div>
+                                <i class="fa-solid fa-caret-down menuopen"></i>
+                            </div>
+                            <ul class="fullscreen submenu">
+                                <li>
+                                    <a asp-controller="car" asp-action="index"><i class="fa-solid fa-plus"></i><span>Araçlar</span></a>
+                                </li>
+                                <li>
+                                    <a asp-controller="car" asp-action="carcreate"><i class="fa-solid fa-plus"></i><span>Araç Ekle</span></a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="container floatright">
+            <header class="fullscreen height50 backgroundcolorwhite paddingfull10">
+                <div class="headerarea flex-row-between">
+                    <div class="section">
+                        <i class="fa-solid fa-arrow-left-long menuopenclosebtn"></i>
+                    </div>
+                </div>
+            </header>
+            <main class="fullscreen">
+               @RenderBody()
+            </main>
+            <footer></footer>
+        </div>
+    </div>
+    <script src="~/js/script.js"></script>
+</body>
+
+</html>

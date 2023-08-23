@@ -1,0 +1,22 @@
+﻿@model IEnumerable<CarTypeDto>
+
+<table id="customers">
+    <tr>
+        <th>Id</th>
+        <th>Araba Tipi</th>
+        <th>İşlemler</th>
+    </tr>
+    @{
+        var i = 0; 
+    }
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@(i = i +1)</td>
+            <td>@item.CarTypes</td>
+            <td></td>
+        </tr>
+    }
+</table>
+
+

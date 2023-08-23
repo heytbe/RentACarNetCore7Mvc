@@ -1,0 +1,40 @@
+﻿@model IEnumerable<CarListDto>
+
+<table id="customers">
+    <tr>
+        <th>Id</th>
+        <th>Resim</th>
+        <th>Model</th>
+        <th>Araba Marka</th>
+        <th>Araba Tipi</th>
+        <th>Araba Model</th>
+        <th>Kaç Kişilik</th>
+        <th>Vites</th>
+        <th>Bagaj</th>
+        <th>Kapı</th>
+        <th>Fiyat</th>
+        <th>İşlemler</th>
+    </tr>
+    @{
+        var i = 0;
+    }
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@(i = i + 1)</td>
+            <td class="carimage"><img src="@item.CarImage"/></td>
+            <td>@item.Model</td>
+            <td>@item.CarBrand.CarBrands</td>
+            <td>@item.CarType.CarTypes</td>
+            <td>@item.CarDate</td>
+            <td>@item.CarPersons</td>
+            <td>@item.CarGear</td>
+            <td>@item.CarLuggage</td>
+            <td>@item.CarDoors</td>
+            <td>@item.CarPrice</td>
+            <td>
+                <a asp-action="delete" asp-route-id="@item.Id">Sil</a>
+            </td>
+        </tr>
+    }
+</table>

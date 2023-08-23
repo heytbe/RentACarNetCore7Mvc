@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html lang="tr-TR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/homestyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+    <title>Document</title>
+</head>
+<body>
+    <div id="tumsayfaalani">
+        <header>
+            <div class="menu">
+                <div class="menuarea">
+                    <section class="logo">
+                        <p>Car Rental</p>
+                    </section>
+                    <section class="menulist">
+                        <ul>
+                            <li><a asp-controller="home" asp-action="index">Ana Sayfa</a></li>
+                            <li><a asp-controller="car" asp-action="index">Tüm Arabalar</a></li>
+                        </ul>
+                    </section>
+                </div>
+            </div>
+            <div class="slider">
+                <div class="slide">
+                    <div class="img" style="background-image: url(image/1287829.jpg);"></div>
+                </div>
+            </div>
+        </header>
+        <main>
+           @RenderBody()
+        </main>
+        <footer>
+            <div class="fullscreen tophr">
+                <div class="footerarea">
+                    <div class="area">
+                        <a href="">Satılık Arabalar</a>
+                        <a href="">Kiralık Arabalar</a>
+                    </div>
+                    <div class="area">
+                        <a href="">Satılık Arabalar</a>
+                        <a href="">Kiralık Arabalar</a>
+                    </div>
+                    <div class="area">
+                        <a href="">Satılık Arabalar</a>
+                        <a href="">Kiralık Arabalar</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

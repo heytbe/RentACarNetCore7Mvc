@@ -1,0 +1,60 @@
+﻿@model List<CarListDto>
+
+<div class="area">
+    <div class="areaflexrow">
+        <div class="area15">
+            <form asp-action="index" method="get">
+                <label for="">Markaya Göre Ara</label>
+                <input type="text" name="SearchBrand" placeholder="Marka Ara">
+                <label for="">Marka</label>
+                <select name="carBrand" id="" asp-items="@ViewBag.Brand">
+                    <option value="">Marka Şeçiniz</option>
+                </select>
+                <label for="">En Düşük Fiyat</label>
+                <input type="text" name="MinPrice" placeholder="En Düşük Fiyat">
+                <label for="">En Yüksek Fiyat</label>
+                <input type="text" name="MaxPrice" placeholder="En Yüksek Fiyat">
+                <label for="">Model Yılı</label>
+                <input type="text" name="CarDate" placeholder="Model Yılı">
+                <button type="submit">Filtrele</button>
+            </form>
+        </div>
+        <div class="area85">
+            <div class="fullscreen margintop20">
+                <div class="areaflexrow padding3">
+                    @foreach (var item in Model)
+                    {
+                        <div class="boxarea">
+                            <div class="title">@item.CarBrand.CarBrands</div>
+                            <a href="">
+                                <div class="boximg">
+                                    <img src="@item.CarImage" alt="">
+                                </div>
+                            </a>
+                            <div class="icons">
+                                <div class="icon">
+                                    <i class="fa-solid fa-users"></i>
+                                    <p>@item.CarPersons</p>
+                                </div>
+                                <div class="icon">
+                                    <i class="fa-solid fa-gears"></i>
+                                    <p>@item.CarGear</p>
+                                </div>
+                                <div class="icon">
+                                    <i class="fa-solid fa-suitcase-rolling"></i>
+                                    <p>@item.CarLuggage</p>
+                                </div>
+                                <div class="icon">
+                                    <i class="fa-solid fa-door-open"></i>
+                                    <p>@item.CarDoors</p>
+                                </div>
+                            </div>
+                            <p class="model">@item.Model - @item.CarDate</p>
+                            <div class="price">@item.CarPrice.ToString("c2")</div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
